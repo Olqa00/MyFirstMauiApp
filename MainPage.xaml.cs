@@ -1,25 +1,36 @@
-﻿namespace MyFirstMauiApp
+﻿namespace MyFirstMauiApp;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public const double FONT_SIZE = 22;
+    private int count = 0;
+
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        this.InitializeComponent();
     }
 
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        this.count++;
+
+        if (this.count == 1)
+        {
+            this.CounterBtn.Text = $"Clicked {this.count} time";
+        }
+        else
+        {
+            this.CounterBtn.Text = $"Clicked {this.count} times";
+        }
+
+        SemanticScreenReader.Announce(this.CounterBtn.Text);
+    }
+}
+
+public class GlobalFontSizeExtension : IMarkupExtension
+{
+    public object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return MainPage.FONT_SIZE;
+    }
 }

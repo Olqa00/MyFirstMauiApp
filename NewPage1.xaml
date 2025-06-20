@@ -2,14 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyFirstMauiApp.NewPage1"
+             xmlns:resources="clr-namespace:MyFirstMauiApp.Resources"
              Title="NewPage1">
-    <StackLayout>
+    <StackLayout BackgroundColor="{x:Static Member=resources:SharedResources.BackgroundColor}">
         <Label
             Text="Count: 0"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             x:Name ="counterLabel"
             FontSize="22"
+            TextColor="{x:Static Member=resources:SharedResources.FontColor}"
             FontAttributes="Bold"/>
 
         <Button
