@@ -7,9 +7,26 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MyFirstMauiApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:NewPage1}"
-        Route="NewPage1" />
-
+    <TabBar>
+        <Tab Title="Home" Icon="dotnet_bot.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="Layout Example" Icon="dotnet_bot.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:LayoutExample}"
+                Route="LayoutExample" />
+        </Tab>
+        <Tab Title="NewPage1" Icon="dotnet_bot.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:NewPage1}"
+                Route="NewPage1" />
+        </Tab>
+        <Tab Title="TestPage" Icon="dotnet_bot.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:TestPage}"
+                Route="TestPage" />
+        </Tab>
+    </TabBar>
 </Shell>
